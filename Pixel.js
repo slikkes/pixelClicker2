@@ -18,18 +18,23 @@ class Pixel{
 		this.ctx.fillRect(this.pos.x+2,this.pos.y+2,size-2,size-2);
 	}
 	levelup(){
-		this.level++;
+		if(this.level<maxLevel)this.level++;
 		
 	}
 }
-
-
-
 
 function setState(hover,index){
 	if(hover){
 		$("#garea").css("cursor","pointer");
 		return "hover";}
-	else if(walker.index==index){return "fresh";}
+	else if(freshChecker(index)){return "fresh";}
 	else{return "normal";}
+}
+
+function freshChecker(index){
+	fresh=false;
+	walkers.forEach(function(elem){
+		if(elem.index==index){fresh=true;}
+	})
+	return fresh;
 }

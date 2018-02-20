@@ -26,8 +26,4 @@ function getIndexFromPosition(position){
 
 
 
-function pointsFromPLevel(level){
-	let multiplier=Math.floor(level/5)+1;
-	
-	let point=basePoint*multiplier;
-	return point;}
+

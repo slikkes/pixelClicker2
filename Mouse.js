@@ -4,18 +4,18 @@ class Mouse{
 	}
 	start(){
 		let self=this;
-		window.addEventListener("mousemove",function(e){
+		area.canvas.addEventListener("mousemove",function(e){
 			self.pos.x=e.clientX;
 			self.pos.y=e.clientY;
 			correctMousePos();
 		})
-		window.addEventListener("click", function( e) {
+		area.canvas.addEventListener("click", function( e) {
 			click();
 		});
-		this.interval=setInterval(function(){
-			self.index=getIndexFromPosition(self.pos);
-			hover();
-		},40);
+		//this.interval=setInterval(function(){
+		//	self.index=getIndexFromPosition(self.pos);
+		//	hover();
+		//},40);
 	}
 }
 
@@ -25,6 +25,7 @@ function click(){
 		if(elem.index==mouse.index){
 			score.update(pointsFromPLevel(elem.level));
 			pixels.splice(i,1);
+			totalPUp();
 		}
 	})
 }
@@ -42,9 +43,26 @@ function hover(){
 			elem.hover=true;
 			elem.update();
 			isany=true;
+			printInfo(i);
 		}else{
 			elem.hover=false;
 		}
 	})
-	if(!isany){$("#garea").css("cursor","default");}
+	if(!isany){
+		$("#garea").css("cursor","default");
+		printInfo(-1);
+
+	}
+}
+
+function printInfo(index){
+	if(index>-1){
+		$('#plevel').html(pixels[index].level);
+		$('#pvalue').html(pointsFromPLevel(pixels[index].level));
+	}
+	else{
+		$('#plevel').html("");
+		$('#pvalue').html("");
+	}
+
 }

@@ -11,9 +11,9 @@ class Area{
 	start(){
 		
 
-		this.context.fillStyle="#ffecb3";
+		this.context.fillStyle="#ccccb3";
 		this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
-		this.interval=setInterval(Update,speed);
+		this.interval=setInterval(Update,70);
 	}
 
 	changeSpeed(){
@@ -22,7 +22,7 @@ class Area{
 	}
 
 	update(){
-		this.context.fillStyle="#ffecb3";
+		this.context.fillStyle="#ccccb3";
 		this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
 	}
 

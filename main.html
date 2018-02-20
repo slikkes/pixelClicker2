@@ -12,19 +12,55 @@
 	<script src="Score.js"></script>
 	<script src="Mouse.js"></script>
 	<script src="ColorScheme.js"></script>
+	<script src="Upgrades.js"></script>
 	<script src="Main.js"></script>
 
 </head>
 <body>
+<div id="content">
 	<div id="garea"> </div>
-	<div id="menubar">
+	<div id="menuholder">
 		<div id="score">0</div>
-		<div id="debugger">
-			<input type="range" min="40" max="200" id="srange"><em id="srangeVal"></em>
+		<div id="menubuttonholder">
+			<ul>
+				<li id="menubutton1"><a>DEBUG</a></li>
+				<li id="menubutton2"><a>BASIC UPGRADES</a></li>
+				<li id="menubutton3"><a>CLICK UPGRADES</a></li>
+				<li id="menubutton4"><a>INFO</a></li>
+			</ul>
+
 		</div>
+		<duv id="menubars">
+			
+			<div id="menu1" class="menus">
+				<input type="range" min="40" max="200" id="srange"><em id="srangeVal"></em><br>
+				<input type="number" min="1" max="36" id="level"><button id="levelb">&nbsp;&nbsp;</button>--level--
+			</div>
+			<div id="menu2" class="menus">asdfasdf</div>
+			<div id="menu3" class="menus">qwerqwe</div>
+			<div id="menu4" class="menus">
+				<table>
+					<tr>
+						<td>pixel level:</td>
+						<td id="plevel" class="righttd"></td>
+					</tr>
+					<tr>
+						<td>value:</td>
+						<td id="pvalue" class="righttd"></td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td>total pixels destroyed:</td>
+						<td id="totalps" class="righttd"></td>
+					</tr>
 
 
+
+				</table>
+			</div>
+		</duv>
 	</div>
+</div>
 </body>
 </html>
 
