@@ -1,2 +1,28 @@
 TODO
 
+
+x menu
+x(kindof) info bar
+upgrade mechanics
+think about currency naming
+styling
+click upgrade
+particle effect
+
+
+
+
+
+
+
+
+<div id="menu1" class="menus">
+				<input type="range" min="40" max="200" id="srange"><em id="srangeVal"></em><br>
+				<input type="number" min="1" max="36" id="level"><button id="levelb">&nbsp;&nbsp;</button>--level--
+			</div>
+
+
+
+
+
+fullstack

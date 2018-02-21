@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>pixel clicker</title>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link href="main.css" type="text/css"  rel="stylesheet">
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="Util.js"></script>
@@ -23,21 +24,43 @@
 		<div id="score">0</div>
 		<div id="menubuttonholder">
 			<ul>
-				<li id="menubutton1"><a>DEBUG</a></li>
-				<li id="menubutton2"><a>BASIC UPGRADES</a></li>
-				<li id="menubutton3"><a>CLICK UPGRADES</a></li>
+								<li id="menubutton2"><a>BASIC<br>UPGRADES</a></li>
+				<li id="menubutton3"><a>CLICK<br>UPGRADES</a></li>
 				<li id="menubutton4"><a>INFO</a></li>
 			</ul>
 
 		</div>
 		<duv id="menubars">
 			
-			<div id="menu1" class="menus">
-				<input type="range" min="40" max="200" id="srange"><em id="srangeVal"></em><br>
-				<input type="number" min="1" max="36" id="level"><button id="levelb">&nbsp;&nbsp;</button>--level--
+			
+			<div id="menu2" class="menus">
+				<table>
+					<tr>
+						<td class="r2">Pixels can reach higher levels.</td>
+						<td class="levels" id="levels0"></td>
+						<td><em id="price0"> <b>200</b> </em><br><button class="bupgradeb" value="0">level up</button></td>
+					</tr>
+					<tr>
+						<td class="r2">Pixels generating faster.</td>
+						<td class="levels" id="levels1"></td>
+						<td><em id="price1"> <b>150</b> </em><br><button class="bupgradeb" value="1">level up</button></td>
+					</tr>
+					<tr>
+						<td class="r2">Incrases pixel value.</td>
+						<td class="levels" id="levels2"></td>
+						<td><em id="price2"> <b> 120</b> </em><br><button class="bupgradeb" value="2">level up</button> </td>
+					</tr>
+
+				</table>
+
+<em onclick="score.update(1000)">+1000</em>
+
+				
 			</div>
-			<div id="menu2" class="menus">asdfasdf</div>
-			<div id="menu3" class="menus">qwerqwe</div>
+			<div id="menu3" class="menus">
+				
+			</div>
+
 			<div id="menu4" class="menus">
 				<table>
 					<tr>
@@ -48,7 +71,7 @@
 						<td>value:</td>
 						<td id="pvalue" class="righttd"></td>
 					</tr>
-					<tr></tr>
+					<tr height="260"></tr>
 					<tr>
 						<td>total pixels destroyed:</td>
 						<td id="totalps" class="righttd"></td>
