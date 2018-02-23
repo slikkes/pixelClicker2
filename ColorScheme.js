@@ -6,7 +6,10 @@ let ColorScheme=[
 //fresh
 	["#93ecd0","#d5ff80","#ffbf80","#ff8080","#ff80df","#b380ff","#80ffff"],
 //shade
-	["#0b4130","#334d00","#4d2600","#4d0000","#4d0039","#1f004d","#004d4d"]
+	["#0b4130","#334d00","#4d2600","#4d0000","#4d0039","#1f004d","#004d4d"],
+//particle
+	["34, 195, 144","170, 255, 0","255, 128, 0","255, 0, 0","255, 0, 191","102, 0, 255","0, 255, 255"]
+
 ]
 
 // 15 75 30 46
@@ -17,6 +20,9 @@ function colorPicker(state,level){
 		case 'normal':return ColorScheme[0][lvl];
 		case 'hover':return ColorScheme[1][lvl];
 		case 'fresh':return ColorScheme[2][lvl];
+		case 'shade':return ColorScheme[3][lvl];
+		case 'particle':return ColorScheme[4][lvl];
+
 	}
 }
 

@@ -4,12 +4,12 @@ class Mouse{
 	}
 	start(){
 		let self=this;
-		area.canvas.addEventListener("mousemove",function(e){
+		particleLayer.canvas.addEventListener("mousemove",function(e){
 			self.pos.x=e.clientX;
 			self.pos.y=e.clientY;
 			correctMousePos();
 		})
-		area.canvas.addEventListener("click", function( e) {
+		particleLayer.canvas.addEventListener("click", function( e) {
 			click();
 		});
 		//this.interval=setInterval(function(){
@@ -23,6 +23,7 @@ function click(){
 	
 	pixels.forEach(function(elem, i){
 		if(elem.index==mouse.index){
+			particles.push( new Particle(elem.pos.x,elem.pos.y,elem.level));
 			score.update(pointsFromPLevel(elem.level));
 			pixels.splice(i,1);
 			totalPUp();

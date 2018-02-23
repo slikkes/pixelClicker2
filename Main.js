@@ -4,13 +4,16 @@ let pixels=[];
 let size=20;
 let score;
 let mouse=new Mouse();
-
+let interval;
 let counter=0;
-
+let particleLayer;
+let particles=[];
 
 $('#garea').ready(function Start(){
-	area= new Area(560,480);
-	area.start();
+	area= new Area(560,480,"#454f54");
+	particleLayer=new Area(560,480,"rgba(0,0,0,0)")
+	//particleLayer=new Area(560,480,"#ccccb3");
+	
 	mouse.start();
 	walkers[0]=new Walker(280,240);
 	score= new Score();
@@ -22,14 +25,18 @@ $('#garea').ready(function Start(){
 	}
 	//createDebugTools();
 	
+	interval=setInterval(Update,70);
 })
 
 function Update(){
 	
+	particleLayer.clear();
 	area.update();
-	
 
-	
+	for(let i=particles.length-1;i>-1;i--){
+		particles[i].update();
+		if(particles[i].life>5){particles.splice(i,1);}
+	}
 
 	if(counter==speed){
 		walkers.forEach(element=>element.walk());

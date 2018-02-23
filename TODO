@@ -3,18 +3,21 @@ TODO
 
 x menu
 x(kindof) info bar
-upgrade mechanics
+x upgrade mechanics
 think about currency naming
-styling
+x styling
 click upgrade
 particle effect
+criticala update
+score ++
+color ^
 
 
 
 
 
 
-
+<li id="menubutton1"><a>DEBUG</a></li>
 
 <div id="menu1" class="menus">
 				<input type="range" min="40" max="200" id="srange"><em id="srangeVal"></em><br>

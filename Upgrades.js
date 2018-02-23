@@ -1,5 +1,5 @@
 let prices=[
-	[200,500,750,1150,1500,2000],
+	[200,500,750,1150,1500,2000,3500],
 	[150,400,600,900,1500],
 	[120,300,500,800,1000]
 ]
@@ -45,7 +45,12 @@ $(function(){
 			speed=Math.floor(6/levels[1]);
 			if(id==1){counter=0;}
 			basePoint=1*levels[2];
+			if(prices[id].length>levels[id]){
+
 			$("#price"+id).html("<b>"+prices[id][levels[id]]+"</b>");
+			}else{
+				("#price"+id).html("<b>max level</b>");
+			}
 			printLevel(id);
 		}
 		console.log(levels);
@@ -54,7 +59,7 @@ $(function(){
 
 function printLevel(id){
 	$("#levels"+id).html("");
-	let n=prices[id].length
+	let n=prices[id].length;
 	for (let i=n;i>0;i--){
 		if(i>levels[id]){
 			

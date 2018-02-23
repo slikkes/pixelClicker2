@@ -9,7 +9,7 @@ class Pixel{
 	}
 	update(){
 		this.ctx=area.context;
-		this.ctx.fillStyle=shadeColorPicker(this.level);		
+		this.ctx.fillStyle=colorPicker("shade",this.level);		
 		this.ctx.fillRect(this.pos.x,this.pos.y,size,size);
 
 		this.state=setState(this.hover,this.index);
