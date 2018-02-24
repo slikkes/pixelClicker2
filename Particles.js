@@ -10,7 +10,9 @@ class Particle{
 	update(){
 
 		this.ctx=particleLayer.context;
+
 		let self=this;
+
 		switch (this.type){
 			case 0:
 				quadro(self,this.pos,this.color,this.life);
@@ -21,6 +23,13 @@ class Particle{
 			case 2:
 				vertical(self,this.pos,this.color,this.life);
 				break;
+			case 3:
+				horizontalS(self,this.pos,this.color,this.life);
+				break;
+			case 4:
+				verticalS(self,this.pos,this.color,this.life);
+				break;
+
 		}
 		this.life++;
 	
@@ -29,28 +38,54 @@ class Particle{
 
 function typeChooser(){
 
-	let type=Math.floor(Math.random()*3);
+	let type=Math.floor(Math.random()*5);
 	return type;
 }
 
 function horizontal(self,pos, color,life){
 
 	step=5*life;
-	topy=pos.y+step;
-	bottomy=pos.y-step;
+	topy=pos.y-step;
+	bottomy=pos.y+step+size/2;
 	self.ctx.fillStyle=color;
 	self.ctx.fillRect(pos.x,topy,size,size/2);
 	self.ctx.fillRect(pos.x,bottomy,size,size/2);
 }
 
+
+function horizontalS(self,pos, color,life){
+
+	step=5*life;
+	topy=pos.y;
+	bottomy=pos.y+size/2;
+	topx=pos.x+step;
+	bottomx=pos.x-step;
+	self.ctx.fillStyle=color;
+	self.ctx.fillRect(topx,topy,size,size/2);
+	self.ctx.fillRect(bottomx,bottomy,size,size/2);
+}
+
 function vertical(self,pos, color,life){
 
 	step=5*life;
-	rightx=pos.x+step;
+	rightx=pos.x+step+size/2;
 	leftx=pos.x-step;
 	self.ctx.fillStyle=color;
 	self.ctx.fillRect(rightx,pos.y,size/2,size);
 	self.ctx.fillRect(leftx,pos.y,size/2,size);
+}
+
+
+function verticalS(self,pos, color,life){
+
+	step=5*life;
+	rightx=pos.x+size/2;
+	leftx=pos.x;
+	righty=pos.y+step;
+	lefty=pos.y-step;	
+	self.ctx.fillStyle=color;
+	self.ctx.fillRect(rightx,righty,size/2,size);
+	self.ctx.fillRect(leftx,lefty,size/2,size);
 }
 
 function quadro(self,pos, color,life){

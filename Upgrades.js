@@ -46,10 +46,9 @@ $(function(){
 			if(id==1){counter=0;}
 			basePoint=1*levels[2];
 			if(prices[id].length>levels[id]){
-
-			$("#price"+id).html("<b>"+prices[id][levels[id]]+"</b>");
+				$("#price"+id).html("<b>"+prices[id][levels[id]]+"</b>");
 			}else{
-				("#price"+id).html("<b>max level</b>");
+				$("#price"+id).html("<b>max</b>");
 			}
 			printLevel(id);
 		}
@@ -71,3 +70,22 @@ function printLevel(id){
 	}
 }
 
+
+
+function smaller(){
+	clearInterval(interval);
+
+	size/=2
+
+	pixels.forEach(function(e){
+    e.pos.x=e.pos.x/2;
+    e.pos.y=e.pos.y/2;
+	e.index=getIndexFromPosition(e.pos)})
+
+	walkers.forEach(function(e){
+		e.pos.x/=2;
+		e.pos.y/=2;
+		e.index=getIndexFromPosition(e.pos)
+	})
+	interval=setInterval(Update,60);
+}

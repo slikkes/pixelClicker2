@@ -1,6 +1,7 @@
 class Mouse{
 	constructor(){
 		this.pos=new Vector(0,0);
+		this.index;
 	}
 	start(){
 		let self=this;
@@ -8,14 +9,11 @@ class Mouse{
 			self.pos.x=e.clientX;
 			self.pos.y=e.clientY;
 			correctMousePos();
+			self.index=getIndexFromPosition(self.pos);
 		})
 		particleLayer.canvas.addEventListener("click", function( e) {
 			click();
 		});
-		//this.interval=setInterval(function(){
-		//	self.index=getIndexFromPosition(self.pos);
-		//	hover();
-		//},40);
 	}
 }
 
@@ -59,7 +57,10 @@ function hover(){
 function printInfo(index){
 	if(index>-1){
 		$('#plevel').html(pixels[index].level);
-		$('#pvalue').html(pointsFromPLevel(pixels[index].level));
+		$('#pvalue').html(pointsFromPLevel(pixels[index].level));/*
+		$('#plevel').html(index);
+		$('#pvalue').html(pixels[index].pos.x+" "+pixels[index].pos.y);*/
+
 	}
 	else{
 		$('#plevel').html("");

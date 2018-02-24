@@ -1,12 +1,12 @@
 let area;
 let walkers=[];
 let pixels=[];
-let size=20;
+let size=40;
 let score;
 let mouse=new Mouse();
 let interval;
 let counter=0;
-let particleLayer;
+let particleLayer;+1000
 let particles=[];
 
 $('#garea').ready(function Start(){
@@ -50,6 +50,8 @@ function Update(){
 
 	mouse.index=getIndexFromPosition(mouse.pos);
 	hover();
+
+	emptySc();
 
 }
 
